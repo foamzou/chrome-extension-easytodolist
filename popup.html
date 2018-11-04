@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title></title>
+  <link rel="stylesheet" href="./layui/css/layui.css">
+</head>
+<body style="width:570px;height: 500px">
+
+	<ul class="layui-nav layui-bg-blue">
+			<li class="layui-nav-item">
+				Easy Todo List
+				<div id="btn-open-task-window" class="layui-btn layui-btn-sm layui-btn-radius layui-btn-warm" style="margin-left:80px;">
+					添加任务
+				</div>
+			</li>
+	</ul>
+
+	<div style="padding-left:20px;padding-top: 7px">
+		<span class="layui-badge-dot layui-bg-orange"></span>
+		<span id="hi-tip" style="padding-left:20px"></span>
+	</div>
+
+	<div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+			<ul class="layui-tab-title">
+				<li class="layui-this">进行中</li>
+				<li>已完成</li>
+			</ul>
+			<div class="layui-tab-content">
+					<div class="layui-tab-item layui-show">
+							<div class="layui-container" id="task-list-pendding" style="margin-top:30px"></div>
+					</div>
+					<div class="layui-tab-item">
+							<div class="layui-container" id="task-list-finished" style="margin-top:30px"></div>
+					</div>
+			</div>
+
+		</div>
+
+
+		
+ 
+<script src="./layui/layui.js"></script>
+<script src="./js/util.js"></script>
+<script src="./js/taskManager.js"></script>
+<script src="./js/popup.js"></script>
+</body>
+
+	<!-- 模态框放在body之外 -->
+	<!-- 添加任务模态框 -->
+
+	<div id="add-task-window" style="display: none;">
+			<form class="layui-form" action="">
+				<div class="layui-form-item">
+					<label class="layui-form-label">任务描述</label>
+					<div class="layui-input-block">
+						<input type="text" id="input-task-desc" required  lay-verify="required" placeholder="输入你的任务描述" autocomplete="off" class="layui-input">
+					</div>
+				</div>
+
+				<div class="layui-form-item">
+					<label class="layui-form-label">需要截期吗</label>
+					<div class="layui-input-block">
+							<input type="checkbox" lay-filter="input-allow-deadline" id="input-allow-deadline" value="1" lay-skin="switch" lay-text="需要|不需要" checked>
+					</div>
+				</div>
+
+				<div class="layui-form-item" id="input-date-group">
+					<label class="layui-form-label">截止日期</label>
+					<div class="layui-input-block">
+							<input type="text" class="layui-input" id="input-date" placeholder="选择截止日期">
+					</div>
+				</div>
+	</div>
+
+</html>

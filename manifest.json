@@ -1,0 +1,37 @@
+{
+	"manifest_version": 2,
+	"name": "Easy Todo List",
+	"version": "0.1.1",
+	"description": "简单的TodoList",
+	"icons":
+	{
+		"16": "img/icon.png",
+		"48": "img/icon.png",
+		"128": "img/icon.png"
+	},
+	"background":
+	{
+		"page": "background.html"
+	},
+	"browser_action": 
+	{
+		"default_icon": "img/icon.png",
+		"default_title": "Easy Todo List",
+		"default_popup": "popup.html"
+	},
+	"permissions":
+	[
+		"contextMenus", 
+		"tabs", 
+		"notifications",
+		"storage"
+	],
+	"web_accessible_resources": ["js/inject.js"],
+	"homepage_url": "https://github.com/woshizoufeng/chrome-extension-easytodolist",
+	"options_page": "options.html",
+	"options_ui":
+	{
+		"page": "options.html",
+		"chrome_style": true
+	}
+}
