@@ -21,9 +21,6 @@
 	},
 	"permissions":
 	[
-		"contextMenus", 
-		"tabs", 
-		"notifications",
 		"storage"
 	],
 	"web_accessible_resources": ["js/inject.js"],
